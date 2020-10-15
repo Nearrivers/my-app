@@ -21,6 +21,7 @@ import {
 } from 'grommet-icons';
 
 import { Sidebar } from 'grommet';
+import ExperiencePro from '../experiencePro/ExperiencePro';
 
 const SidebarFooter = () => (
 <Box align="center">
@@ -105,8 +106,11 @@ const Navbar = () => (
             ))}
             </Nav>
         </Sidebar>
-        <Diplome fill gridArea="main"/>
-    
+        <Box fill gridArea="main">
+            <Diplome fill />
+            <ExperiencePro fill />
+        </Box>
+        
     </Grid>
     
 
