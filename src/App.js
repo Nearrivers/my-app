@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Counter } from './features/counter/Counter';
-import { Grommet, Box, Text } from 'grommet';
-import Name from "./features/name/Name"
+import { Grommet, Box} from 'grommet';
+import Cv from "./features/cv/Cv"
 
 const theme = {
   global: {
@@ -16,10 +16,8 @@ const theme = {
 function App() {
   return (
     <Grommet theme={theme} full> 
-      <Box fill align="center" direction="row" gap="medium" justify="center">
-        <Text>Hello world</Text>
-        <Text>Hello world</Text>
-        <Name/>
+      <Box align="center" direction="row" gap="medium" justify="center">
+        <Cv></Cv>
       </Box>
     </Grommet>
   );
