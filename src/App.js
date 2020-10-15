@@ -1,7 +1,6 @@
 import React from 'react';
-// import { Counter } from './features/counter/Counter';
 import { Grommet, Box} from 'grommet';
-import Cv from "./features/cv/Cv"
+import Navbar from './features/navbar/Navbar'
 
 const theme = {
   global: {
@@ -16,8 +15,8 @@ const theme = {
 function App() {
   return (
     <Grommet theme={theme} full> 
-      <Box align="center" direction="row" gap="medium" justify="center">
-        <Cv></Cv>
+      <Box fill align="center" direction="row" gap="medium" justify="center">
+        <Navbar/>
       </Box>
     </Grommet>
   );

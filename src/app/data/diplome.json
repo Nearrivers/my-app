@@ -1,0 +1,32 @@
+[
+    {
+        "nom" : "Master",
+        "spécialite" : "Expert développement web",
+        "annee" : "En cours",
+        "etablissement" : "YNOV Campus de Toulouse"
+    },
+    {
+        "nom" : "Bachelor Informatique",
+        "spécialite" : "Data et développement d'applicaiton",
+        "annee" : "2020",
+        "etablissement" : "Lycée St-Pierre à Tarbes"
+    },
+    {
+        "nom" : "BTS Systèmes Numériques",
+        "spécialite" : "Informatique et réseau",
+        "annee" : "2019",
+        "etablissement" : "Lycée St-Pierre à Tarbes"
+    },
+    {
+        "nom" : "Baccalauréat STi2D",
+        "spécialite" : "Systèmes d'Informations et Numériques",
+        "annee" : "2017",
+        "etablissement" : "Lycée La sède à Tarbes"
+    },
+    {
+        "nom" : "TOEIC",
+        "spécialite" : "915 points",
+        "annee" : "17 Janvier 2019",
+        "etablissement" : ""
+    }
+]

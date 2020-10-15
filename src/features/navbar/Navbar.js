@@ -1,15 +1,15 @@
 import React, { useState, useRef } from 'react'
 import photo from '../../img/V1qVvY_Y_400x400.jpg'
+import Diplome from '../diplome/Diplome'
 
 import {
     Avatar,
     Button,
     Box,
     Drop,
-    grommet,
-    Grommet,
     Nav,
     Text,
+    Grid
 } from 'grommet';
 
 import {
@@ -82,14 +82,22 @@ const ref = useRef();
 };
 
 const Navbar = () => (
-    <Grommet theme={grommet} full>
-        <Box direction="row" height={{ min: '100%' }}>
+    <Grid
+      fill
+      areas={[
+        { name: 'nav', start: [0, 0], end: [0, 0] },
+        { name: 'main', start: [1, 0], end: [1, 0] },
+      ]}
+      columns={['small', 'flex']}
+      rows={['flex']}
+      gap="small"
+    >
+      
         <Sidebar
-            overflow="auto"
             background="brand"
             header={<SidebarHeader />}
             footer={<SidebarFooter />}
-            pad="none"
+            gridArea="nav"
         >
             <Nav>
             {['Diplômes', 'Compétences', "Centres d'intérêt", "Expériences professionnelles", "Informations supplémentaires"].map((iconName, index) => (
@@ -97,8 +105,11 @@ const Navbar = () => (
             ))}
             </Nav>
         </Sidebar>
-        </Box>
-    </Grommet>
+        <Diplome fill gridArea="main"/>
+    
+    </Grid>
+    
+
 );
 
 export default Navbar
