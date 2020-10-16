@@ -1,4 +1,5 @@
 import React from 'react';
+import { CookiesProvider } from 'react-cookie';
 import { 
   Grommet, 
   Box,
@@ -7,6 +8,7 @@ import {
 import Navbar from './features/navbar/Navbar'
 import Diplome from './features/diplome/Diplome'
 import ExperiencePro from './features/experiencePro/ExperiencePro';
+import Competence from './features/competence/Competence'
 
 const theme = {
   global: {
@@ -15,33 +17,58 @@ const theme = {
       size: '16px',
       height: '20px',
     },
+    colors: {
+      blue: '#00C8FF',
+      green: '#17EBA0',
+      teal: '#82FFF2',
+      lightblue: '#00a0dc',
+      purple: '#563d7c',
+      red: '#dd1b16',
+      orange: '#f06529',
+      yellow: '#f0db4f',
+      darkblue: '#3765af'
+    }
+  },
+  card: {
+    footer: {
+      pad: { horizontal: 'medium', vertical: 'small' },
+      background: '#FFFFFF27',
+    },
   },
 }
 
 function App() {
   return (
-    <Grommet theme={theme} full>      
-      <Navbar/>      
-      <Box direction="row">
-        <Box fill>
+    <CookiesProvider>
+      <Grommet theme={theme} full>      
+        <Navbar/>      
+        <Box direction="row">
+          <Box fill>
 
-          <Heading margin="small">
-            Diplômes
-          </Heading>
-          <Box margin="small" direction="row">
-            <Diplome/>
-          </Box>
+            <Heading margin="medium">
+              Diplômes
+            </Heading>
+            <Box margin="small" direction="row">
+              <Diplome/>
+            </Box>
 
-          <Heading margin="medium">
-            Expériences professionnelles
-          </Heading>
-          <Box direction="row">
-            <ExperiencePro/>
-          </Box>
+            <Heading margin="medium">
+              Compétences
+            </Heading>
+            <Box direction="row-responsive">
+              <Competence/>
+            </Box>
 
-        </Box>        
-      </Box>
-    </Grommet>
+            <Heading margin="medium">
+              Expériences professionnelles
+            </Heading>
+            <Box direction="row">
+              <ExperiencePro/>
+            </Box>          
+          </Box>        
+        </Box>
+      </Grommet>
+    </CookiesProvider>
   );
 }
 
