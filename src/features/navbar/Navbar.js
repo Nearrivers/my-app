@@ -6,10 +6,9 @@ import {
     Button,
     Box,
     Drop,
-    grommet,
-    Grommet,
     Nav,
     Text,
+    Header
 } from 'grommet';
 
 import {
@@ -20,20 +19,6 @@ import {
     Book
 } from 'grommet-icons';
 
-import { Sidebar } from 'grommet';
-
-const SidebarFooter = () => (
-<Box align="center">
-    <Avatar size="large" margin="small" src={photo}/>
-</Box>
-);
-
-const SidebarHeader = () => (
-<Box pad="small">
-    <Text>Fourcade Antoine</Text>
-</Box>
-);
-
 const iconsMap = color => [
     <Book color={color} />,
     <Analytics color={color} />,
@@ -42,64 +27,58 @@ const iconsMap = color => [
     <ContactInfo color={color} />
 ];
 
-const SidebarButton = ({ iconName, index }) => {
-const [over, setOver] = useState();
-const tooltipColor = { color: 'accent-1', opacity: 0.9 };
+const NavbarButton = ({ iconName, index }) => {
+    const [over, setOver] = useState();
+    const tooltipColor = { color: 'accent-1', opacity: 0.9 };
 
-const ref = useRef();
-    return (
-        <Box fill="horizontal">
-        <Button
-            ref={ref}
-            onMouseOver={() => setOver(true)}
-            onMouseLeave={() => setOver(false)}
-            onFocus={() => setOver(false)}
-            onBlur={() => setOver(false)}
-            hoverIndicator={tooltipColor}
-            plain
-        >
-            {({ hover }) => (
-            <Box pad={{ vertical: 'small' }} align="center">
-                {iconsMap(hover ? 'black' : 'white')[index]}
+    const ref = useRef();
+        return (
+            <Box fill="horizontal">
+                <Button
+                    ref={ref}
+                    onMouseOver={() => setOver(true)}
+                    onMouseLeave={() => setOver(false)}
+                    onFocus={() => setOver(false)}
+                    onBlur={() => setOver(false)}
+                    plain
+                >
+                    {({ hover }) => (
+                    <Box pad={{ vertical: 'small' }} align="center" round="true">
+                        {iconsMap(hover ? 'accent-1' : 'white')[index]}
+                    </Box>
+                    )}
+                </Button>
+                {ref.current && over && (
+                    <Drop align={{ top: 'bottom', right: 'right' }} target={ref.current} plain>
+                        <Box
+                            animation="slideDown"
+                            margin="xsmall"
+                            pad="small"
+                            background={tooltipColor}
+                        >
+                            {iconName}
+                        </Box>
+                    </Drop>
+                )}
             </Box>
-            )}
-        </Button>
-        {ref.current && over && (
-            <Drop align={{ left: 'right' }} target={ref.current} plain>
-            <Box
-                animation="slideRight"
-                margin="xsmall"
-                pad="small"
-                background={tooltipColor}
-                round={{ size: 'medium', corner: 'right' }}
-            >
-                {iconName}
-            </Box>
-            </Drop>
-        )}
-        </Box>
-    );
+        );
 };
 
-const Navbar = () => (
-    <Grommet theme={grommet} full>
-        <Box direction="row" height={{ min: '100%' }}>
-        <Sidebar
-            overflow="auto"
-            background="brand"
-            header={<SidebarHeader />}
-            footer={<SidebarFooter />}
-            pad="none"
-        >
-            <Nav>
+const Navbar = () => (        
+    <Header background="brand" pad="small" justify="around">      
+        <Avatar src={photo}/>
+        <Text>Antoine Fourcade</Text>
+        
+        <Nav direction="row">
             {['Diplômes', 'Compétences', "Centres d'intérêt", "Expériences professionnelles", "Informations supplémentaires"].map((iconName, index) => (
-                <SidebarButton key={iconName} iconName={iconName} index={index} />
+                <NavbarButton 
+                    key={iconName} 
+                    iconName={iconName} 
+                    index={index}
+                />
             ))}
-            </Nav>
-        </Sidebar>
-        </Box>
-    </Grommet>
+        </Nav>
+    </Header>
 );
 
 export default Navbar
-//storiesOf('Sidebar', module).add('Tooltips', () => <TooltipsSidebar />);

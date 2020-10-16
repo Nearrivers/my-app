@@ -1,7 +1,12 @@
 import React from 'react';
-// import { Counter } from './features/counter/Counter';
-import { Grommet, Box} from 'grommet';
-import Cv from "./features/cv/Cv"
+import { 
+  Grommet, 
+  Box,
+  Heading
+} from 'grommet';
+import Navbar from './features/navbar/Navbar'
+import Diplome from './features/diplome/Diplome'
+import ExperiencePro from './features/experiencePro/ExperiencePro';
 
 const theme = {
   global: {
@@ -15,9 +20,26 @@ const theme = {
 
 function App() {
   return (
-    <Grommet theme={theme} full> 
-      <Box align="center" direction="row" gap="medium" justify="center">
-        <Cv></Cv>
+    <Grommet theme={theme} full>      
+      <Navbar/>      
+      <Box direction="row">
+        <Box fill>
+
+          <Heading margin="small">
+            Diplômes
+          </Heading>
+          <Box margin="small" direction="row">
+            <Diplome/>
+          </Box>
+
+          <Heading margin="medium">
+            Expériences professionnelles
+          </Heading>
+          <Box direction="row">
+            <ExperiencePro/>
+          </Box>
+
+        </Box>        
       </Box>
     </Grommet>
   );

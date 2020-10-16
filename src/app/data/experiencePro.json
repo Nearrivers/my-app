@@ -1,0 +1,14 @@
+[
+    {
+        "poste" : "Hôte de caisse",
+        "description" : "Emploi en intérim sur 2 années. J'étais mobilisé lorsque l'employeur manquait de personnel",
+        "lieu" : "Ibos, Juillan",
+        "entreprise" : "Leclerc d'Ibos, Intermarché de Juillan"
+    },
+    {
+        "poste" : "Développeur",
+        "description" : "Emploi en alternance sur 3 années. Toujours en cours. L'entreprise m'accompagne tout au long de mes 3 dernières années de formations. J'y développe des applications pour le domaine de l'Agro-Alimentaire",
+        "lieu" : "Zone Bastillac de Tarbes",
+        "entreprise" : "Axe Informatique Tarbes"
+    }
+]
