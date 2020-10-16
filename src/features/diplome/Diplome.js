@@ -4,10 +4,10 @@ import { Accordion, AccordionPanel, Box, Text } from 'grommet';
 import diplome from '../../app/data/diplome.json'
 
 const Diplome = props => {
-    const { animate, multiple, ...rest } = props;
+    const { animate, multiple } = props;
     return (        
-        <Box {...rest} fill>
-            <Accordion animate={animate} multiple={multiple} fill>
+        <Box fill>
+            <Accordion animate={animate} multiple={multiple} >
                 {diplome.map((object, i) => {
                     return (
                         <AccordionPanel key={i} label={object.nom}>
