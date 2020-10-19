@@ -10,11 +10,13 @@
     "grommet": "^2.15.2",
     "grommet-icons": "^4.5.0",
     "react": "^16.14.0",
+    "react-cookie": "^4.0.3",
     "react-dom": "^16.14.0",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "universal-cookie": "^4.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
