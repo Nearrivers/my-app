@@ -9,6 +9,7 @@ import Navbar from './features/navbar/Navbar'
 import Diplome from './features/diplome/Diplome'
 import ExperiencePro from './features/experiencePro/ExperiencePro';
 import Competence from './features/competence/Competence'
+import Interet from './features/interet/Interet'
 
 const theme = {
   global: {
@@ -35,6 +36,19 @@ const theme = {
       background: '#FFFFFF27',
     },
   },
+  carousel: {
+    animation: {
+      duration: 400,
+    },
+    icons: {
+      color: 'blue',
+    },
+    disabled: {
+      icons: {
+        color: 'grey',
+      },
+    },
+  },
 }
 
 function App() {
@@ -57,6 +71,13 @@ function App() {
             </Heading>
             <Box direction="row-responsive">
               <Competence/>
+            </Box>
+
+            <Heading margin="medium">
+              Centres d'intérêt
+            </Heading>
+            <Box direction="row-responsive">
+              <Interet/>
             </Box>
 
             <Heading margin="medium">

@@ -19,10 +19,10 @@ const ExperiencePro = () => {
     return (
         <>            
             {size === "small" ? (
-                <Box pad="medium" align="start">
+                <Box pad="large" align="center">
                     {experiencePro.map((object, i) => {
                         return (
-                            <Card elevation="medium" width="large" margin="small" key={i} pad="medium" background="brand">
+                            <Card elevation="small" width="large" margin="medium" key={i} pad="medium" background="brand">
                                 <CardHeader>
                                     <Heading level="1" align="center">
                                         {object.poste}
