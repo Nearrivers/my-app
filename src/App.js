@@ -10,6 +10,7 @@ import Diplome from './features/diplome/Diplome'
 import ExperiencePro from './features/experiencePro/ExperiencePro';
 import Competence from './features/competence/Competence'
 import Interet from './features/interet/Interet'
+import Infos from './features/infos/infos';
 
 const theme = {
   global: {
@@ -36,19 +37,6 @@ const theme = {
       background: '#FFFFFF27',
     },
   },
-  carousel: {
-    animation: {
-      duration: 400,
-    },
-    icons: {
-      color: 'blue',
-    },
-    disabled: {
-      icons: {
-        color: 'grey',
-      },
-    },
-  },
 }
 
 function App() {
@@ -59,33 +47,37 @@ function App() {
         <Box direction="row">
           <Box fill>
 
-            <Heading margin="medium">
+            <Heading margin="medium" id="diplomes">
               Diplômes
             </Heading>
             <Box margin="small" direction="row">
               <Diplome/>
             </Box>
 
-            <Heading margin="medium">
+            <Heading margin="medium" id="competences">
               Compétences
             </Heading>
             <Box direction="row-responsive">
               <Competence/>
             </Box>
 
-            <Heading margin="medium">
+            <Heading margin="medium" id="interets">
               Centres d'intérêt
             </Heading>
             <Box direction="row-responsive">
               <Interet/>
             </Box>
 
-            <Heading margin="medium">
+            <Heading margin="medium" id="experiences">
               Expériences professionnelles
             </Heading>
             <Box direction="row">
               <ExperiencePro/>
-            </Box>          
+            </Box>
+            
+            <Box direction="row" id="infos">
+              <Infos/>
+            </Box>         
           </Box>        
         </Box>
       </Grommet>

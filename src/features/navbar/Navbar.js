@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react'
 import photo from '../../img/V1qVvY_Y_400x400.jpg'
+import navBar from '../../app/data/navbar.json'
 
 import {
     Avatar,
@@ -8,7 +9,10 @@ import {
     Drop,
     Nav,
     Text,
-    Header
+    Header,
+    Anchor,
+    ResponsiveContext,
+    Menu
 } from 'grommet';
 
 import {
@@ -16,7 +20,8 @@ import {
     Music,
     Workshop,
     Analytics,
-    Book
+    Book,
+    Menu as MenuIcon 
 } from 'grommet-icons';
 
 const iconsMap = color => [
@@ -68,16 +73,29 @@ const Navbar = () => (
     <Header background="brand" pad="small" justify="around">      
         <Avatar src={photo}/>
         <Text>Antoine Fourcade</Text>
-        
-        <Nav direction="row">
-            {['Diplômes', 'Compétences', "Centres d'intérêt", "Expériences professionnelles", "Informations supplémentaires"].map((iconName, index) => (
-                <NavbarButton 
-                    key={iconName} 
-                    iconName={iconName} 
-                    index={index}
-                />
-            ))}
-        </Nav>
+        <ResponsiveContext.Consumer>
+            {size =>
+                size === 'small' ? (
+                    <Box justify="end">
+                        <Menu
+                            a11yTitle="Navigation Menu"
+                            dropProps={{ align: { top: 'bottom', right: 'right' } }}
+                            icon={<MenuIcon color="white" />}
+                            items={navBar}
+                        />
+                    </Box>
+                ) : (
+                <Nav direction="row">
+                    {navBar.map((value, i) => (
+                        <Anchor href={value.href} key={i}>
+                            <NavbarButton                         
+                                iconName={value.label} 
+                                index={i}
+                            />
+                        </Anchor>
+                    ))}
+                </Nav> )}
+        </ResponsiveContext.Consumer>
     </Header>
 );
 
