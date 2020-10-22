@@ -1,0 +1,22 @@
+[
+    {
+        "label" : "Diplômes",
+        "href" : "#diplomes"
+    },
+    {
+        "label" : "Compétences",
+        "href": "#competences"
+    },
+    {
+        "label" : "Centres d'intérêt",
+        "href": "#interets"
+    },
+    {
+        "label" : "Expériences professionnelles",
+        "href": "#experiences"
+    },
+    {
+        "label" : "Informations supplémentaires",
+        "href": "#infos"
+    }
+]

@@ -1,0 +1,22 @@
+[
+    {
+        "label" : "Adresse Mail",
+        "data" : "a.fourcade65@gmail.com"
+    },
+    {
+        "label" : "Téléphone",
+        "data" : "06 52 61 44 65"
+    },
+    {
+        "label" : "Permis",
+        "data" : "Permis B"
+    },
+    {
+        "label" : "Date de naissance",
+        "data" : "Né le 14/10/1999"
+    },
+    {
+        "label" : "Adresse",
+        "data" : "16 Avenue des Minimes"
+    }
+]

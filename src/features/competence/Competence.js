@@ -11,7 +11,6 @@ import { Box, Card, CardBody, CardFooter, Text, Avatar, Button } from 'grommet';
 import logoAngular from '../../img/Angular_full_color_logo.svg.png'
 import logoBootstrap from '../../img/bootstrappng.png'
 import logoMySql from '../../img/development+logo+mysql+icon-1320184807686758112.png'
-// import Cookies from 'universal-cookie';
 
 const data = [
     {
@@ -77,8 +76,6 @@ const Identifier = ({ children, title, subTitle, size, ...rest }) => (
 );
 
 const Competence = () => {
-    // const cookies = new Cookies();
-    // const [favorite, setFavorite] = React.useState(cookies.getAll());
     const [favorite, setFavorite] = React.useState([false,false,false,false,false,false,false]);
     return (
         <Box pad="medium" direction="row-responsive" >
